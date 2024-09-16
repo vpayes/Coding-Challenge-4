@@ -18,7 +18,7 @@ function displayProductDetails(product){
 console.log(display.inventory[0]);
 
 // Task 3: Create a Function to Update Product Stock After Sales 
-function updateStock(product, units sold) {
+function updateStock(product, unitsSold) {
     if (unitsSold > product.quantity)
     const status = product.quantity <= product.lowStockLevel ? "low stock" : "out of stock";
     if (product.quantity === 0) {
@@ -33,3 +33,14 @@ function checkLowStock (inventory){
             return console.log(`Low stock level: ${inventory}`)
     })
 }
+
+// Task 5: Create a FUnction to Calculate Total Inventory Value
+function calculateInventoryValue (inventory) {
+    return inventory.reduce((total, totalValue)=> {
+        return totalValue + (inventory.quantity * inventory.price)},0);
+    };
+    const inventoryTotalValue = calculateInventoryValue(inventory);
+    console.log(`Total iventory value is $${inventoryTotalValue}`);
+
+
+
